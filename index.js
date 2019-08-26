@@ -20,12 +20,11 @@ const deepestChild = function (){
     while(currentNodes.length > 1 || currentNodes[0].childElementCount > 0){
         for (const node of currentNodes) {
             for(let i = 0; i < node.children.length; i++){
-                currentNodes.push(node.children[0])
+                currentNodes.push(node.children[i])
             }
             currentNodes.shift()
         }
 
     }
-
     return currentNodes[0]
 }
